@@ -47,6 +47,23 @@ self.addEventListener('install', function (e) {
   )
 })
 
+
+self.addEventListener('push', function(event) {
+    if (event.data) {
+        const pushTitle = "A simple push notification";
+        const pushOptions = {
+            body: "push content body",
+            icon: "./images/logo-192x192.png",
+            vibrate: [100,50,100],
+        };
+
+        self.registration.showNotification(
+            pushTitle,
+            pushOptions,
+        )
+    }
+});
+
 // Delete outdated caches
 self.addEventListener('activate', function (e) {
   e.waitUntil(

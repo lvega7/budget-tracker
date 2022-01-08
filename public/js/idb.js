@@ -28,6 +28,8 @@ function saveRecord(record) {
 
   // add record to your store with add method.
   transactionObjectStore.add(record);
+
+
 }
 
 function uploadTransaction() {
